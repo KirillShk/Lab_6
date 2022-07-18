@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,22 +23,15 @@ namespace Task_3
                 if (a == ch2)
                 {
                     ind2 = s1.IndexOf(ch2)+1;
-                    string x = s1.Substring(0, ind2);
-                    ind1 = x.LastIndexOf(ch1);          
+                    result = s1.Substring(0, ind2);
+                    ind1 = result.LastIndexOf(ch1);
+                    s1 = s1.Remove(ind1, ind2 - ind1);
+                    result = "";
+                    continue;
                 }
-             s1 = s1.Remove(ind1, ind2 - ind1);
             }
-           //Console.WriteLine(ind1);
-           //Console.WriteLine(ind2);
             Console.WriteLine(s1);
             Console.ReadKey();
         }
     }
 }
-
-/*if (a == ch1)
-{
-    ind1 = s1.IndexOf(ch1);
-    ind2 = s1.IndexOf(ch2) + 1;
-    s1 = s1.Remove(ind1, ind2 - ind1);
-}*/
